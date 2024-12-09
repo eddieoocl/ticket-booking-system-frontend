@@ -2,17 +2,29 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../style/PersonalInfomationPage.css";
 
-const PersonalInformationPage: React.FC = (props) => {
-    const { personal_information } = props;
-    const { first_name, last_name, email, phone } = personal_information;
+const PersonalInformationPage: React.FC = ({ personal_information }) => {
     return (
         <div className="personal-info-container">
-            <h1>Your Personal Information</h1>
-            <p>Name: {first_name} {last_name}</p>
-            <p>Email: {email}</p>
-            <p>Phone: {phone}</p>
+            <h2>Personal Information</h2>
+            <table className="table table-responsive table-striped">
+                <thead>
+                <tr>
+                    <th>Moviegoer</th>
+                    <th>Phone Number</th>
+                    <th>Email</th>
+                </tr>
+                </thead>
+                <tbody>
+                {personal_information.map((information, index) => (
+                    <tr key={index}>
+                        <td>{information.first_name} {information.last_name}</td>
+                        <td>{information.phone}</td>
+                        <td>{information.email}</td>
+                    </tr>
+                ))}
+                </tbody>
+            </table>
         </div>
     );
 };
-
 export default PersonalInformationPage;
