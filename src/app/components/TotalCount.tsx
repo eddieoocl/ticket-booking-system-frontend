@@ -1,13 +1,35 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../style/TotalCount.css";
-import data from "../mockdata/data.json";
 
 const TotalCount: React.FC = (props) => {
     const { tickets, add_ons } = props;
 
-    const totalQuantity = tickets.reduce((acc, ticket) => acc + ticket.amount, 0) + add_ons.reduce((acc, add_on) => acc + add_on.amount, 0);
-    const totalValue = tickets.reduce((acc, ticket) => acc + (ticket.price * ticket.amount), 0) + add_ons.reduce((acc, add_on) => acc + (add_on.price * add_on.amount), 0);
+    const [totalQuantity, setTotalQuantity] = useState(0);
+    const [totalValue, setTotalValue] = useState(0);
+
+    const calculateTotalAmount = (items) => {
+        return items.reduce((acc, item) => acc + item.amount, 0);
+    };
+    const calculateTotalFee = (items) => {
+        return items.reduce((acc, item) => acc + (item.price * item.amount), 0);
+    };
+
+
+    useEffect(() => {
+        const calculateTotals = () => {
+            const totalTicketAmount = calculateTotalAmount(tickets);
+            const totalAddOnAmount = calculateTotalAmount(add_ons);
+            const totalAmount = totalTicketAmount + totalAddOnAmount;
+            const totalTicketFee = calculateTotalFee(tickets);
+            const totalAddOnFee = calculateTotalFee(add_ons);
+            const totalVal = totalTicketFee + totalAddOnFee;
+            setTotalQuantity(totalAmount);
+            setTotalValue(totalVal);
+        };
+
+        calculateTotals();
+    }, [tickets, add_ons]);
 
     return (
         <div className="total-count-container">
