@@ -5,7 +5,7 @@
     align-items: center;
     padding: 1rem;
     border-bottom: 1px solid #9370DB;
-    background-color: #000;
+    /*background-color: #000;*/
     color: #fff;
 }
 
@@ -20,6 +20,12 @@
 }
 
 .order-entry .commodity-description {
+    font-size: 1rem;
+    color: #ccc;
+}
+
+.order-entry .commodity-seating {
+    margin-left: 10px;
     font-size: 1rem;
     color: #ccc;
 }
