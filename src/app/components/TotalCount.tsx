@@ -18,11 +18,19 @@ const TotalCount: React.FC = (props) => {
 
     useEffect(() => {
         const calculateTotals = () => {
-            const totalTicketAmount = calculateTotalAmount(tickets);
-            const totalAddOnAmount = calculateTotalAmount(add_ons);
+            var totalTicketAmount = 0;
+            var totalAddOnAmount = 0;
+            var totalTicketFee = 0;
+            var totalAddOnFee = 0;
+            if(tickets){
+                 totalTicketAmount= calculateTotalAmount(tickets);
+                 totalTicketFee = calculateTotalFee(tickets);
+            }
+            if(add_ons){
+                    totalAddOnAmount = calculateTotalAmount(add_ons);
+                    totalAddOnFee = calculateTotalFee(add_ons);
+            }
             const totalAmount = totalTicketAmount + totalAddOnAmount;
-            const totalTicketFee = calculateTotalFee(tickets);
-            const totalAddOnFee = calculateTotalFee(add_ons);
             const totalVal = totalTicketFee + totalAddOnFee;
             setTotalQuantity(totalAmount);
             setTotalValue(totalVal);
