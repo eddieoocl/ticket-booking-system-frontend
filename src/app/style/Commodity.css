@@ -1,0 +1,33 @@
+/* src/app/style/Commodity.css */
+.order-entry {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid #9370DB;
+    background-color: #000;
+    color: #fff;
+}
+
+.order-entry .commodity-info {
+    flex: 1;
+}
+
+.order-entry .commodity-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #BA55D3;
+}
+
+.order-entry .commodity-description {
+    font-size: 1rem;
+    color: #ccc;
+}
+
+.order-entry .commodity-details {
+    text-align: right;
+}
+
+.order-entry .commodity-details p {
+    margin: 0;
+}
