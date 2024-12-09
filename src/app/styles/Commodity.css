@@ -7,6 +7,7 @@
     border-bottom: 1px solid #9370DB;
     /*background-color: #000;*/
     color: #fff;
+    overflow: auto;
 }
 
 .order-entry .commodity-info {
@@ -36,4 +37,23 @@
 
 .order-entry .commodity-details p {
     margin: 0;
+}
+
+.round-button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #BA55D3;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    margin: 0 10px;
+}
+
+.round-button:hover {
+    background-color: #9370DB;
 }
