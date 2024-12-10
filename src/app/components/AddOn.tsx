@@ -2,9 +2,10 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "@/app/styles/Commodity.css";
 import React from "react";
 
+//todo addon props type is not defined
 const AddOn: React.FC = (props) => {
     const { commodity, setAddOns } = props;
-    const { id, name, price, amount, description } = commodity;
+    const { id, name, amount, description, price } = commodity;
     const [commodityAmount, setCommodityAmount] = React.useState(amount);
 
     //todo the amount reduce to 0,alert ,agree then remove
@@ -31,8 +32,9 @@ const AddOn: React.FC = (props) => {
             </div>
             <div className="commodity-details">
                 <p>Amount: {commodityAmount}</p>
-                <p>Price: {price}</p>
-                <p>Total: {total}</p>
+                {/*todo currency symbol*/}
+                <p>Price: ${price}</p>
+                <p>Total: ${total}</p>
             </div>
             <div className="button-container">
                 <button className="round-button" onClick={() => updateAmount(commodityAmount + 1)}>+</button>

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "../style/TotalCount.css";
+import "@/app/styles/TotalCount.css";
 
 const TotalCount: React.FC = (props) => {
     const { tickets, add_ons } = props;

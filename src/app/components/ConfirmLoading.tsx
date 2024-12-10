@@ -1,6 +1,6 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "../style/ConfirmLoading.css";
+import "@/app/styles/ConfirmLoading.css";
 
 const ConfirmLoading: React.FC = () => {
     return (

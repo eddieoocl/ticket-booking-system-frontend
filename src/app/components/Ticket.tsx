@@ -5,7 +5,7 @@ import React from "react";
 
 const Ticket: React.FC<{ commodity: Ticket }> = (props) => {
     const { commodity } = props;
-    const { name, price, amount, description, seating } = props.commodity;
+    const { name,  amount, price,description, seating } = props.commodity;
     const [commodityAmount, setCommodityAmount] = React.useState<number>(amount);
     const total = (price * commodityAmount).toFixed(2);
     return (
@@ -15,12 +15,12 @@ const Ticket: React.FC<{ commodity: Ticket }> = (props) => {
                     {name}
                     {seating &&<span className="commodity-seating">Seating Type: {seating}</span>}
                 </p>
-                <p className="commodity-description">{description}</p>
             </div>
             <div className="commodity-details">
                 <p>Amount: {commodityAmount}</p>
-                <p>Price: {price}</p>
-                <p>Total: {total}</p>
+                {/*todo currency symbol*/}
+                <p>Price: ${price}</p>
+                <p>Total: ${total}</p>
             </div>
 
         </div>
