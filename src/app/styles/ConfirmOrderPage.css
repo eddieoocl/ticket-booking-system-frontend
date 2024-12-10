@@ -54,7 +54,7 @@
     margin-left: 20px;
 }
 
-.more-button{
+.side-button{
     background-color: #BA55D3;
     color: #fff;
     padding: 5px 10px;
@@ -63,4 +63,5 @@
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    float: right;
 }

@@ -8,6 +8,7 @@
     /*background-color: #000;*/
     color: #fff;
     overflow: auto;
+    clear: both;
 }
 
 .order-entry .commodity-info {
